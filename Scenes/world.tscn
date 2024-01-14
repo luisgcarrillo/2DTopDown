@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=3 uid="uid://c7d0rtvh76tj2"]
+
+[ext_resource type="PackedScene" uid="uid://db78v3k1p4afb" path="res://Scenes/Player.tscn" id="1_6cdx6"]
+[ext_resource type="Script" path="res://Scripts/world.cs" id="1_32ucr"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.cs" id="2_edi3m"]
+[ext_resource type="PackedScene" uid="uid://15326f5vyavk" path="res://Scenes/enemy.tscn" id="2_pj2v1"]
+[ext_resource type="Script" path="res://Scripts/ScoreLabel.cs" id="5_ycmwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4pfo"]
+size = Vector2(53, 1128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnj3k"]
+size = Vector2(2058, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poj3n"]
+size = Vector2(2001, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol2ak"]
+size = Vector2(82, 1137)
+
+[sub_resource type="Theme" id="Theme_bfcvp"]
+
+[sub_resource type="FontFile" id="FontFile_432hw"]
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgppj"]
+font = SubResource("FontFile_432hw")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_32ucr")
+
+[node name="Player" parent="." instance=ExtResource("1_6cdx6")]
+position = Vector2(963, 559)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -10
+offset_left = -13.0
+offset_top = -8.0
+offset_right = 1946.0
+offset_bottom = 1090.0
+color = Color(0.886275, 0.886275, 0.886275, 0.858824)
+
+[node name="BoundaryLeft" type="StaticBody2D" parent="." groups=["Boundary"]]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryLeft"]
+position = Vector2(-39.5, 527)
+shape = SubResource("RectangleShape2D_k4pfo")
+
+[node name="BoundaryBot" type="StaticBody2D" parent="." groups=["Boundary"]]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryBot"]
+position = Vector2(963, 1099.5)
+shape = SubResource("RectangleShape2D_tnj3k")
+
+[node name="BoundaryTop" type="StaticBody2D" parent="." groups=["Boundary"]]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryTop"]
+position = Vector2(985.5, -26)
+shape = SubResource("RectangleShape2D_poj3n")
+
+[node name="BoundaryRight" type="StaticBody2D" parent="." groups=["Boundary"]]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryRight"]
+position = Vector2(1976, 532.5)
+shape = SubResource("RectangleShape2D_ol2ak")
+
+[node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("2_edi3m")
+enemy_scene = ExtResource("2_pj2v1")
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5"), NodePath("SpawnPoint6"), NodePath("SpawnPoint7"), NodePath("SpawnPoint8")]
+
+[node name="SpawnPoint" type="Node2D" parent="EnemySpawner"]
+position = Vector2(32, 32)
+
+[node name="SpawnPoint2" type="Node2D" parent="EnemySpawner"]
+position = Vector2(24, 559)
+
+[node name="SpawnPoint3" type="Node2D" parent="EnemySpawner"]
+position = Vector2(32, 1056)
+
+[node name="SpawnPoint4" type="Node2D" parent="EnemySpawner"]
+position = Vector2(963, 1056)
+
+[node name="SpawnPoint5" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1896, 1056)
+
+[node name="SpawnPoint6" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1896, 559)
+
+[node name="SpawnPoint7" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1896, 32)
+
+[node name="SpawnPoint8" type="Node2D" parent="EnemySpawner"]
+position = Vector2(963, 32)
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_bfcvp")
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 768.0
+offset_right = 1152.0
+offset_bottom = 128.0
+text = "0"
+label_settings = SubResource("LabelSettings_vgppj")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_ycmwa")

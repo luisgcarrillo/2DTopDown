@@ -1,0 +1,12 @@
+res://Scenes/bullet.tscn
+res://Scripts/enemy.cs
+res://Scripts/bullet.cs
+res://Scripts/CustomSignals.cs
+res://Scripts/EnemySpawner.cs
+res://Scripts/Gun.cs
+res://Scripts/Player.cs
+res://Scripts/ScoreLabel.cs
+res://Scripts/world.cs
+res://Scenes/Player.tscn
+res://Scenes/world.tscn
+res://Scenes/enemy.tscn

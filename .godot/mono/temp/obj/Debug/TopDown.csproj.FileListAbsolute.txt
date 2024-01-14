@@ -1,0 +1,17 @@
+G:\Godot Projects\TopDown\.godot\mono\temp\bin\Debug\TopDown.deps.json
+G:\Godot Projects\TopDown\.godot\mono\temp\bin\Debug\TopDown.runtimeconfig.json
+G:\Godot Projects\TopDown\.godot\mono\temp\bin\Debug\TopDown.dll
+G:\Godot Projects\TopDown\.godot\mono\temp\bin\Debug\TopDown.pdb
+G:\Godot Projects\TopDown\.godot\mono\temp\bin\Debug\GodotSharp.dll
+G:\Godot Projects\TopDown\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.csproj.AssemblyReference.cache
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.GeneratedMSBuildEditorConfig.editorconfig
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.AssemblyInfoInputs.cache
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.AssemblyInfo.cs
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.csproj.CoreCompileInputs.cache
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.csproj.CopyComplete
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.dll
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\refint\TopDown.dll
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.pdb
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\TopDown.genruntimeconfig.cache
+G:\Godot Projects\TopDown\.godot\mono\temp\obj\Debug\ref\TopDown.dll
